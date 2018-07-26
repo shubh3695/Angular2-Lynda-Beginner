@@ -1,6 +1,17 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div class ="card search" style="text-align:center">
-  <h1 class="search-headline">Artist Directory</h1>
-  <label class="seach-label">Search Label</label>
+<div class ="card search">
+  <h1 class="search-headline" style="text-align:center">Artist Directory</h1>
+  <label class="seach-label">Search for {{ name }}</label>
+  <input class="search-input"#newArtist>
+  <br>
+  <button class="btn" (click)="btnClick(newArtist.value)">Add</button>
+  <ul class="artistlist cf" >
+    <li class="artistlist-item cf" *ngFor="let i of artists" (click)="clickEvent($event)">
+      <h2 class="artist-name">{{i.name}}</h2>
+      <h3 class="artist-name">
+        {{i.school}}
+      </h3>
+      <hr>
+    </li>
+  </ul>
 </div>
-
